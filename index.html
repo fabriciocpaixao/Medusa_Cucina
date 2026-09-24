@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medusa Cucina | Brownies Artesanais</title>
+    
+    <!-- Importação da Tipografia do Design System -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variáveis de Cor do Design System Medusa */
+        :root {
+            --kombu-green: #354024;
+            --cafe-noir: #4C3D19;
+            --moss: #889063;
+            --tan: #CFBB99;
+            --bone: #E5D7C6;
+        }
+
+        /* Reset e Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bone);
+            color: var(--kombu-green);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            line-height: 1.65;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Marca d'água do Logotipo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw;
+            height: 80vw;
+            max-width: 800px;
+            max-height: 800px;
+            /* Substitua a URL abaixo pelo link real da sua imagem no GitHub */
+            background-image: url('/Logo_medusa.jpeg_2K_202609011640.jpeg_2K_20260917092300.jpeg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.04;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Tipografia de Títulos */
+        h1, h2, h3 {
+            font-family: 'Italiana', serif;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+        }
+
+        /* Navegação Superior */
+        nav {
+            padding: 24px 56px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--tan);
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--kombu-green);
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-left: 32px;
+        }
+
+        /* Hero Section (Editorial) */
+        .hero {
+            text-align: center;
+            padding: 120px 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--kombu-green);
+        }
+
+        /* Seção do Produto */
+        .produto-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            max-width: 1200px;
+            margin: 0 auto 120px;
+            padding: 0 56px;
+            align-items: center;
+        }
+
+        .produto-imagem {
+            width: 100%;
+            height: 600px;
+            background-color: var(--tan);
+            border-radius: 8px; /* Arredondamento suave do Design System */
+            object-fit: cover;
+        }
+
+        .produto-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .tag {
+            background-color: transparent;
+            color: var(--moss);
+            border: 1px solid var(--moss);
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+        }
+
+        .produto-info h2 {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .preco {
+            font-size: 24px;
+            font-family: 'Italiana', serif;
+            margin-bottom: 32px;
+        }
+
+        .descricao {
+            font-size: 15px;
+            margin-bottom: 40px;
+            max-width: 400px;
+        }
+
+        /* Botão Primário (Pill) */
+        .btn-comprar {
+            background-color: var(--kombu-green);
+            color: var(--bone);
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-comprar:hover {
+            background-color: var(--cafe-noir);
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 64px 24px;
+            border-top: 1px solid var(--tan);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* Responsividade para Celulares */
+        @media (max-width: 768px) {
+            nav { padding: 24px; flex-direction: column; gap: 16px; }
+            .nav-links { display: none; }
+            .hero { padding: 80px 24px; }
+            .hero h1 { font-size: 40px; }
+            .produto-container { grid-template-columns: 1fr; padding: 0 24px; }
+            .produto-imagem { height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Medusa</div>
+        <div class="nav-links">
+            <a href="#">Catálogo</a>
+            <a href="#">Private Chef</a>
+            <a href="#">O Atelier</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>O tempo das mãos que tocam a massa.</h1>
+        <p>Cada doce parece ter sido encontrado, não comprado. Há um silêncio nas escolhas que faz a textura respirar diferente.</p>
+    </header>
+
+    <section class="produto-container">
+        <!-- Substitua o src abaixo pela foto real do seu brownie embalado -->
+        <img src="https://via.placeholder.com/600x800/CFBB99/354024?text=Foto+do+Brownie" alt="Brownie Premium Medusa" class="produto-imagem">
+        
+        <div class="produto-info">
+            <span class="tag">Edição Limitada</span>
+            <h2>Fudge Brownie<br>Artesanal</h2>
+            <div class="preco">R$ 18,33</div>
+            <p class="descricao">A espessura densa do chocolate nobre belga contrastando com o toque craquelado no topo. Embalado à mão em papel de seda verde profundo, finalizado com lacre de cera. Um ritual em cada detalhe.</p>
+            
+            <!-- Link do botão direcionado para o seu WhatsApp -->
+            <a href="https://wa.me/5511919772151?text=Olá!%20Gostaria%20de%20reservar%20uma%20edição%20do%20Brownie." class="btn-comprar" target="_blank">Reservar Edição</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>2026 MEDUSA CUCINA | PEQUENOS LOTES, FEITOS COM PAIXÃO</p>
+    </footer>
+
+</body>
+</html>
